@@ -55,7 +55,7 @@ def extract_jump(series, peaks_list: list, column):
 def compute_height_initial_velocity(df, column):
     g = 9.81
     vertical_acc = df[column].values
-    # dx = 1/ 104
+    # dx = 1 / 104
     vertical_velocity = cumtrapz(vertical_acc, dx=0.00961538461, initial=0)
     v0 = vertical_velocity.max()
     return (v0 ** 2) / (2 * g)
